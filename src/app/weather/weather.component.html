@@ -1,0 +1,51 @@
+<div class="bg-container">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center   my-4 heading">Search For Weather Report of a City</h2>
+
+      <form
+        [formGroup]="weatherSearchForm"
+        (ngSubmit)="sendToApi(weatherSearchForm.value)"
+      >
+        <div class="form-group">
+          <input
+            class="form-control input"
+            type="text"
+            id="weatherLocation"
+            aria-describedby="weatherLocatio"
+            placeholder="Please enter a Location "
+            formControlName="location"
+            required
+          />
+        </div>
+        <span class="error-msg">{{weatherData?.success === false? "Please enter a valid Location":""}}</span>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-md">
+            Search for the weather
+          </button>
+          <button routerLink="/" class="btn btn-primary">Back</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-12">
+      <h2 class="text-center  my-4 heading">
+        Weather Details
+      </h2>
+      <div class="result-container">
+        <div>
+          <p>Location: <span class="result">{{weatherData?.location.name }}, {{weatherData?.location.region}}, {{weatherData?.location.country}}</span></p>
+          <p>Temperature: <span class="result">{{weatherData?.current.temperature}}<sup>o</sup> C</span></p>
+          <p>Pressure: <span class="result">{{weatherData?.current.pressure}} mb</span></p>
+          <p>Cloud Cover: <span class="result">{{weatherData?.current.cloudcover}}</span></p>
+          <p>Wind Speed: <span class="result">{{weatherData?.current.wind_speed}} knot</span></p>
+        </div>
+        <div class="image-container">
+          <img src={{weatherData?.current.weather_icons[0]}} alt="" class="image"><br>
+          <p class="text-center result">{{weatherData?.current.weather_descriptions}}</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
