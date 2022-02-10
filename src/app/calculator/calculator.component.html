@@ -1,0 +1,25 @@
+<div class="bg-container">
+  <div class="header">
+  <h3 class="heading">Simple Calculator App </h3>
+  <button class="btn btn-primary" routerLink="">BACK</button>
+</div>
+<div class="calc-bg-container">
+  <div class="calculator">
+    <h2 class="calc-heading">Simple Calculator</h2>
+    <div>
+      <input type="text" readonly class="result" value="{{result}}">
+    </div>
+    <div>
+      <button class="button long"
+      (click)="onClickBtn(longButton)"
+      *ngFor="let longButton of longButtons" >
+      {{longButton}}</button>
+
+      <button class="button"
+      (click)="onClickBtn(button)"
+      *ngFor="let button of buttons" >
+      {{button}}</button>
+    </div>
+  </div>
+</div>
+</div>

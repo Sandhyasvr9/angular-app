@@ -48,3 +48,6 @@ p{
   color: red;
   font-size: 14px;
 }
+.btn-primary:hover{
+  background-color: green;
+}
