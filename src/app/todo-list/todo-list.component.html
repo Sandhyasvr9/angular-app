@@ -1,0 +1,42 @@
+<div class="card">
+<div class="card-header">
+  <nav class="nav">
+    <a class="nav-link" routerLink="/weather">Weather app</a>
+      <a class="nav-link" routerLink="/calculator">Calculator</a>
+    <a class="nav-link" routerLink="/todo-app">Todo app</a>
+    <a class="nav-link back-route" routerLink="/">Back</a>
+    <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-right-short"></i> </a>
+
+  </nav>
+</div>
+<h1 class="heading">Todo List</h1>
+<div class="card-body list-container">
+  <div *ngFor="let todo of todoList" class="list-item">
+    <div class="main-container">
+      <div class="name-container">
+        <p class="name">{{todo.name}}</p>
+        <p class="date">{{(todo.time) }}</p>
+      </div>
+      <p class="description">{{todo.description}}</p>
+
+    </div>
+
+    <div class="btn-container">
+      <button class="btn btn-success btn-sm" [routerLink]="['/update-todo',todo.id]">Edit</button>
+      <button class="btn-warning btn btn-sm" (click)="onDeleteTodo(todo.id)">Delete</button>
+      <button class="btns" [routerLink]="['/update-todo',todo.id]"><i class="bi bi-pencil-fill bis"></i></button>
+      <button class="btns" (click)="onDeleteTodo(todo.id)"><i class="bi bi-trash-fill bis"></i></button>
+    </div>
+
+  </div>
+</div>
+<footer class="footer" >
+  <ul class="icon-container">
+    <li><i class="bi bi-linkedin icon"></i></li>
+    <li><i class="bi bi-twitter icon"></i></li>
+    <li><i class="bi bi-instagram icon"></i></li>
+    <li><i class="bi bi-facebook icon"></i></li>
+  </ul>
+  <p class="footer-desc">By Sandhya Bommineni, 2022 &copy;</p>
+</footer>
+</div>

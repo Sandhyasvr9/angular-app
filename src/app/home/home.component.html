@@ -1,11 +1,42 @@
 <div class="home-bg-container">
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h2 class="home-heading">List of the Projects</h2>
-      <button routerLink="weather" class="btn btn-primary mt-2">Click to get Weather Details</button>
-      <button routerLink="calculator" class="btn btn-success mt-2">Calculator</button>
+    <div class="col-md-12 home-container">
+      <h2 class="home-heading">List of the Projects Using Angular cli</h2>
+      <div class="main-container">
+      <div class="weather-container p-container" routerLink="weather">
+        <h3 class="heading">Weather App</h3>
+        <p>WeatherApp is a Quantum Fabric application that provides back end services
+          to the users. The app contains a set of weather APIs. Using the APIs, users
+          can obtain the weather information of any location in the world. You can see it working here:</p>
+          <a routerLink="weather" class="link active">Click to get Weather Details</a>
+      </div>
+      <div class="p-container calculator" routerLink="calculator">
+        <h3 class="heading calc-head">Calculator App</h3>
+        <p class="description">The calculator app will help us to do
+           various arithmetic calculations. This application will have a user interface with numbers and arithmetic operations.
+           It will have the number keys and operators like +, -, *, / that will be created using buttons. You can see it working here:</p>
+          <a routerLink="calculator" class="link">Click to Calculator app</a>
+      </div>
+      <div class="p-container todo" routerLink="todo-app">
+        <h3 class="heading">Todo App</h3>
+        <p>Todo-list-app is an application that allows to manage a list of tasks to do. It performs adding,
+           updating and deleting state of each task. It has minimalistic design and basic functionality. You can see it working here:</p>
+          <a routerLink="todo-app" class="link active">Click to Todo app</a>
+      </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+<footer class="footer" >
+  <ul class="icon-container">
+    <li><i class="bi bi-linkedin icon"></i></li>
+    <li><i class="bi bi-twitter icon"></i></li>
+    <li><i class="bi bi-instagram icon"></i></li>
+    <li><i class="bi bi-facebook icon"></i></li>
+  </ul>
+  <p class="footer-desc">By Sandhya Bommineni, 2022 &copy;</p>
+</footer>
 </div>

@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-header">
+    <nav class="nav">
+      <a class="nav-link" routerLink="/weather">Weather app</a>
+      <a class="nav-link" routerLink="/calculator">Calculator</a>
+      <a class="nav-link" routerLink="/todo-app">Todo app</a>
+      <a class="nav-link back-route" routerLink="/">Back</a>
+    <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-right-short"></i> </a>
+    </nav>
+  </div>
+
+
+  <form action="/action_page.php" class="form-container" >
+    <h1 class="heading">Update Todo</h1>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" #n1 = "ngModel"[(ngModel)]="todoObj.name" placeholder="Enter a Todo" name="name" required>
+      <p *ngIf="n1.invalid && (n1.dirty || n1.touched)"
+    class="alert">
+
+    <span *ngIf="n1.errors?.['required']" class="error-msg">required*
+    </span></p>
+    </div>
+    <div class="form-group">
+      <label for="comment">Description:</label>
+      <textarea class="form-control" placeholder="Enter a description"
+      id="comment" #n2 = "ngModel"[(ngModel)]="todoObj.description" name="description"required></textarea>
+      <p *ngIf="n2.invalid && (n2.dirty || n2.touched)"
+    class="alert">
+
+    <span *ngIf="n2.errors?.['required']" class="error-msg">required*
+    </span></p>
+
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label><br>
+      <input type="date" class="form-control" id="date" form2 = "ngModel"[(ngModel)]="todoObj.time" name="time"required>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" (click)="onUpdateTodo()" >Update Todo</button>
+
+  </form>
+
+  <footer class="footer" >
+    <ul class="icon-container">
+      <li><i class="bi bi-linkedin icon"></i></li>
+      <li><i class="bi bi-twitter icon"></i></li>
+      <li><i class="bi bi-instagram icon"></i></li>
+      <li><i class="bi bi-facebook icon"></i></li>
+    </ul>
+    <p class="footer-desc">By Sandhya Bommineni, 2022 &copy;</p>
+  </footer>
+
+</div>
