@@ -23,10 +23,10 @@ export class WeatherComponent implements OnInit {
     });
   }
   sendToApi(formValues) {
-    console.log(formValues);
+    // console.log(formValues);
     this.apiService.getWeather(formValues.location).subscribe(data => {
       this.weatherData = data;
-      console.log(this.weatherData);
+      // console.log(this.weatherData);
     });
   }
 }

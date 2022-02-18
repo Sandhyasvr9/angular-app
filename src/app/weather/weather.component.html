@@ -2,11 +2,15 @@
   <div class="card">
     <div class="card-header">
       <nav class="nav">
+        <div>
+          <a class="nav-link back-route" routerLink="/">Back</a>
+        <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-bar-left"></i> </a>
+        </div>
+        <div class="app-container">
         <a class="nav-link" routerLink="/weather">Weather app</a>
         <a class="nav-link" routerLink="/calculator">Calculator</a>
-        <a class="nav-link" routerLink="/todo-app">Todo App</a>
-        <a class="nav-link back-route" routerLink="/">Back</a>
-        <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-right-short"></i> </a>
+        <a class="nav-link" routerLink="/todolist">Todo App</a>
+      </div>
       </nav>
     </div>
     <div class="container">
@@ -40,6 +44,10 @@
             </div>
           </form>
         </div>
+        <p *ngIf="weatherData === undefined else ifBlock "></p>
+       <ng-template #ifBlock><p *ngIf="weatherData.success === false else elseBlock" class="result-for-not-found" >No Weather Reports are Found</p>
+       </ng-template>
+       <ng-template #elseBlock>
         <div class="col-md-12">
           <h2 class="text-center  my-4 heading">
             Weather Details
@@ -58,17 +66,31 @@
             </div>
         </div>
         </div>
+       </ng-template>
+
       </div>
     </div>
 
     <footer class="footer" >
-      <ul class="icon-container">
-        <li><i class="bi bi-linkedin icon"></i></li>
-        <li><i class="bi bi-twitter icon"></i></li>
-        <li><i class="bi bi-instagram icon"></i></li>
-        <li><i class="bi bi-facebook icon"></i></li>
-      </ul>
-      <p class="footer-desc">By Sandhya Bommineni, 2022 &copy;</p>
+      <div class="footer-container about">
+        <h2 class="footer-head">About us</h2>
+        <p class="about-description">By Sandhya Bommineni, a Web Developer in Viewzenlabs, Chennai.
+          Developed using angular with typescript, Bootstrap, Html, and CSS.
+        </p></div>
+          <div class="footer-container">
+        <h2 class="footer-head">Contact Us</h2>
+        <p><span class="span"><i class="bi bi-telephone-x-fill"></i></span>+91 9553171711</p>
+        <p class="email"><span class="span"><i class="bi bi-envelope-fill"></i></span>sandhya.bommineni@viewzenlabs.com</p>
+      </div>
+      <div class="footer-container">
+        <h2 class="footer-head follow-us">Follow us</h2>
+        <ul class="icon-container">
+          <li><i class="bi bi-linkedin icon"></i></li>
+          <li><i class="bi bi-twitter icon"></i></li>
+          <li><i class="bi bi-instagram icon"></i></li>
+          <li><i class="bi bi-facebook icon"></i></li>
+        </ul>
+      </div>
     </footer>
   </div>
 

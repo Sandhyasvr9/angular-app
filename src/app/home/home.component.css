@@ -132,26 +132,36 @@ p{
 }
 .footer{
   position: fixed;
-  padding: 10px;
   bottom: 0;
-  width: 100%;
-  padding-top: 30px;
-  height: 140px;
+  width: 100vw;
+  padding-top: 15px;
+  height: 150px;
   background: #240138;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   color: #fff;
 }
 
 .icon-container{
   display: flex;
   list-style-type: none;
-
+}
+.footer-container{
+  width: 30vw;
+  margin-left: 100px
+}
+.about{
+width: 40vw;
+}
+.follow-us{
+  margin-left: 30px;
+}
+.about-description{
+  width: 60%;
 }
 .icon{
   color: #fff;
-  font-size: 32px;
+  font-size: 28px;
   padding-right: 24px;
   padding-bottom: 10px;
   display: inline-block;
@@ -170,5 +180,38 @@ p{
 @media(max-width:300px){
   .footer-desc{
     font-size: 16px;
+  }
+}
+.footer-head{
+  color: goldenrod;
+}
+.email{
+  width: 500px;
+}
+.span{
+  color:goldenrod;
+  font-size: 18px;
+  margin-right: 20px;
+  padding-top: 4px;
+}
+@media(max-width:1200px){
+  .footer{
+   flex-direction: column;
+   height: 350px;
+  }
+  .footer-container{
+    margin-left: 10px;
+    width: 100%;
+  }
+  .about-description{
+    width: 90%;
+  }
+  .follow-us{
+    margin-left: 0px;
+  }
+  .footer{height: 350px;
+  }
+  .container{
+    padding-bottom: 350px;
   }
 }

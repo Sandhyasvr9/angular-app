@@ -1,7 +1,14 @@
 .card{
   background-color: azure;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+  min-height: 84vh;
+  position: relative;
+  padding-bottom: 140px;
+  border: none;
+}
+.card-bg-container{
+  background-color: azure;
+  min-height: 100vh;
 }
 .heading{
   font-weight: 600;
@@ -9,7 +16,16 @@
 }
 .input{
   width: 100%;
-
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 125px;
+}
+@media (max-width:767px){
+  .nav{
+    margin-right: 0px;
+  }
 }
 .form-container{
   text-align: center;
@@ -121,19 +137,7 @@ p{
 .btn-primary:hover{
   background-color: green;
 }
-.footer{
-  position: fixed;
-  padding: 10px;
-  bottom: 0;
-  width: 100%;
-  padding-top: 30px;
-  height: 140px;
-  background: #240138;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-}
+
 
 .icon-container{
   display: flex;
@@ -150,10 +154,21 @@ p{
   position: relative;
   opacity: 0.7;
 }
+.app-container{
+  display: flex;
+}
 .icon:hover{
   transform: translateY(-7px);
   opacity: 5;
 }
+.result-for-not-found{
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #1a1919;
+  text-align: center;
+}
+
 .footer-desc{
   font-size: 20px;
   width: auto;
@@ -165,9 +180,84 @@ p{
   .card-header{
   padding-left: 0px;
   }
+  .result-for-not-found{
+    font-size: 20px;
+  }
 }
 @media(max-width:512px){
   .footer-desc{
     font-size: 17px;
+  }
+  .result-for-not-found{
+    font-size: 18px;
+  }
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding-top: 15px;
+  height: 150px;
+  background: #240138;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+}
+.icon{
+  color: #fff;
+  font-size: 28px;
+  padding-right: 24px;
+  padding-bottom: 10px;
+  display: inline-block;
+  transition: 0.5s;
+  position: relative;
+  opacity: 0.7;
+}
+.footer-container{
+  width: 30vw;
+  margin-left: 100px
+}
+.about{
+width: 40vw;
+}
+.follow-us{
+  margin-left: 30px;
+}
+.about-description{
+  width: 60%;
+}
+.footer-head{
+  color: goldenrod;
+}
+.email{
+  width: 500px;
+}
+.span{
+  color:goldenrod;
+  font-size: 18px;
+  margin-right: 20px;
+  padding-top: 4px;
+}
+
+p{
+  font-size: 14px;
+}
+@media(max-width:1200px){
+  .footer{
+   flex-direction: column;
+   height: 350px;
+  }
+  .footer-container{
+    margin-left: 10px;
+    width: 100%;
+  }
+  .about-description{
+    width: 90%;
+  }
+  .follow-us{
+    margin-left: 0px;
+  }
+  .card{
+    padding-bottom: 200px;
   }
 }

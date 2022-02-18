@@ -1,16 +1,21 @@
 <div class="card">
 <div class="card-header">
   <nav class="nav">
+    <div>
+      <a class="nav-link back-route" routerLink="/">Back</a>
+    <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-bar-left"></i></a>
+    </div>
+    <div class="app-container">
     <a class="nav-link" routerLink="/weather">Weather app</a>
-      <a class="nav-link" routerLink="/calculator">Calculator</a>
-    <a class="nav-link" routerLink="/todo-app">Todo app</a>
-    <a class="nav-link back-route" routerLink="/">Back</a>
-    <a class="nav-link back" routerLink="/"><i class="bi bi-arrow-right-short"></i> </a>
-
+    <a class="nav-link" routerLink="/calculator">Calculator</a>
+    <a class="nav-link" routerLink="/todolist">Todo App</a>
+  </div>
   </nav>
 </div>
 <h1 class="heading">Todo List</h1>
+
 <div class="card-body list-container">
+  <button routerLink="/todo-app" class="btn btn-primary btn-md">Click to add a New Todo</button>
   <div *ngFor="let todo of todoList" class="list-item">
     <div class="main-container">
       <div class="name-container">
@@ -31,12 +36,24 @@
   </div>
 </div>
 <footer class="footer" >
-  <ul class="icon-container">
-    <li><i class="bi bi-linkedin icon"></i></li>
-    <li><i class="bi bi-twitter icon"></i></li>
-    <li><i class="bi bi-instagram icon"></i></li>
-    <li><i class="bi bi-facebook icon"></i></li>
-  </ul>
-  <p class="footer-desc">By Sandhya Bommineni, 2022 &copy;</p>
+  <div class="footer-container about">
+    <h2 class="footer-head">About us</h2>
+    <p class="about-description">By Sandhya Bommineni, a Web Developer in Viewzenlabs, Chennai.
+      Developed using angular with typescript, Bootstrap, Html, and CSS.
+    </p></div>
+      <div class="footer-container">
+    <h2 class="footer-head">Contact Us</h2>
+    <p><span class="span"><i class="bi bi-telephone-x-fill"></i></span>+91 9553171711</p>
+    <p class="email"><span class="span"><i class="bi bi-envelope-fill"></i></span>sandhya.bommineni@viewzenlabs.com</p>
+  </div>
+  <div class="footer-container">
+    <h2 class="footer-head follow-us">Follow us</h2>
+    <ul class="icon-container">
+      <li><i class="bi bi-linkedin icon"></i></li>
+      <li><i class="bi bi-twitter icon"></i></li>
+      <li><i class="bi bi-instagram icon"></i></li>
+      <li><i class="bi bi-facebook icon"></i></li>
+    </ul>
+  </div>
 </footer>
 </div>

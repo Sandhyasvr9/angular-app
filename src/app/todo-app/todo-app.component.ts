@@ -9,6 +9,7 @@ import { todoObj } from '../todo';
 })
 export class TodoAppComponent implements OnInit {
   todoObj:todoObj;
+  errorMessage:string = '';
 
   constructor( private router:Router) {
     this.todoObj  = new todoObj();
@@ -32,17 +33,21 @@ export class TodoAppComponent implements OnInit {
     const latestId = this.getNewId();
     this.todoObj.id = latestId;
     const oldRecords = localStorage.getItem('todoList');
-    if (oldRecords !== null){
-      const todoList = JSON.parse(oldRecords);
-      todoList.push(this.todoObj);
-      localStorage.setItem('todoList',JSON.stringify(todoList));
+    const keys = Object.keys(this.todoObj)
+    if (keys.length >3 ){
+      if (oldRecords !== null){
+        const todoList = JSON.parse(oldRecords);
+        todoList.push(this.todoObj);
+        localStorage.setItem('todoList',JSON.stringify(todoList));
+      }else{
+        const todoArr = [];
+        todoArr.push(this.todoObj);
+        localStorage.setItem('todoList',JSON.stringify(todoArr));
+      }
+      this.router.navigateByUrl('/todolist')
+      this.errorMessage = '';
     }else{
-      const todoArr = [];
-      todoArr.push(this.todoObj);
-      localStorage.setItem('todoList',JSON.stringify(todoArr));
+      this.errorMessage = 'Please enter a Todo name, description and Date';
     }
-    this.router.navigateByUrl('/todolist')
   }
-
-
 }
